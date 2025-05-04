@@ -9,7 +9,6 @@ import {
   flexRender,
   getCoreRowModel,
   useReactTable,
-  ColumnFiltersState,
   getFilteredRowModel,
 } from "@tanstack/react-table";
 

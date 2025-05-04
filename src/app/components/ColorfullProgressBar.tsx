@@ -7,11 +7,6 @@ type Props = {
 };
 
 export function ColorfullProgressBar({ color, text, value, number }: Props) {
-  const colorMap = {
-    green: "green-500",
-    yellow: "yellow-500",
-    blue: "blue-500",
-  };
   return (
     <div className="flex flex-row">
       <div
