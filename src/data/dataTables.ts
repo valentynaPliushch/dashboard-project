@@ -1,0 +1,242 @@
+export type WorkItem = {
+  id: number;
+  originator: string;
+  client: string;
+  type: "Underwriter Referral" | "Email";
+  status: "New" | "Pending Review" | "Completed";
+  date: string;
+};
+
+export type AccountItem = {
+  id: number;
+  account: {
+    name: string;
+    type: string;
+  };
+  line: string;
+  broker: string;
+  renewaldate: string;
+  premium: string | number;
+  ratedpremium: string | number;
+  lossratio: number;
+  appetite: "high" | "medium" | "cautious";
+  status: "active" | "under review";
+  triage: number;
+  winnability: string;
+};
+
+export type PolicyItem = {
+  id: number;
+  line: {
+    icon: string;
+    name: string;
+    lineNumber: string;
+  };
+  effDate: string;
+  expDate: string;
+  status: "Active" | "Pending";
+  expTech: number | string;
+  expPremium: number | string;
+  renewalToTech: number | string;
+  renewalTech: number | string;
+  renewalPremium: number | string;
+  rateChange: string;
+  lossRatio: number | undefined;
+};
+
+export const mockData: WorkItem[] = [
+  {
+    id: 1,
+    originator: "Sam Masters",
+    client: "NAMEX Tech Solution",
+    type: "Underwriter Referral",
+    status: "New",
+    date: "2025/04/20",
+  },
+  {
+    id: 2,
+    originator: "Analise Wills",
+    client: "NAMEX Tech Solution",
+    type: "Underwriter Referral",
+    status: "New",
+    date: "2025/04/20",
+  },
+  {
+    id: 3,
+    originator: "Patric Devenport",
+    client: "NAMEX Tech Solution",
+    type: "Underwriter Referral",
+    status: "New",
+    date: "2025/04/20",
+  },
+  {
+    id: 4,
+    originator: "Ana Killian",
+    client: "NAMEX Tech Solution",
+    type: "Underwriter Referral",
+    status: "Pending Review",
+    date: "2025/04/20",
+  },
+  {
+    id: 5,
+    originator: "Ana Killian",
+    client: "NAMEX Tech Solution",
+    type: "Email",
+    status: "Completed",
+    date: "2025/04/20",
+  },
+  {
+    id: 6,
+    originator: "Me",
+    client: "NAMEX Tech Solution",
+    type: "Email",
+    status: "Completed",
+    date: "2025/04/20",
+  },
+];
+
+export const dataMyAccounts: AccountItem[] = [
+  {
+    id: 1,
+    account: {
+      name: "NAMEX Tech Solutions",
+      type: "Large Enterprise",
+    },
+    line: "D&O Liability",
+    broker: "Wills Towers",
+    renewaldate: "04/16/2025",
+    premium: 23000000,
+    ratedpremium: 28000000,
+    lossratio: 32,
+    appetite: "high",
+    status: "active",
+    triage: 180,
+    winnability: "Very Strong",
+  },
+  {
+    id: 2,
+    account: {
+      name: "Alliance Healtcare Systems",
+      type: "Mid-Market",
+    },
+    line: "Medical Malpractice",
+    broker: "Aon Risk",
+    renewaldate: "06/30/2025",
+    premium: 17000000,
+    ratedpremium: 19000000,
+    lossratio: 38,
+    appetite: "medium",
+    status: "under review",
+    triage: 165,
+    winnability: "Strong",
+  },
+  {
+    id: 3,
+    account: {
+      name: "Maritime Logistics Corp",
+      type: "Shipping/Logistics",
+    },
+    line: "Marine Cargo",
+    broker: "Marsch McLennan",
+    renewaldate: "09/05/2025",
+    premium: 875000,
+    ratedpremium: 920000,
+    lossratio: 25,
+    appetite: "high",
+    status: "active",
+    triage: 182,
+    winnability: "Very Strong",
+  },
+  {
+    id: 4,
+    account: {
+      name: "GreenField Energy Ltd",
+      type: "Energy Sector",
+    },
+    line: "Enviromental Liability",
+    broker: "Aon Risk",
+    renewaldate: "07/22/2025",
+    premium: 1200000,
+    ratedpremium: 1400000,
+    lossratio: 67,
+    appetite: "cautious",
+    status: "under review",
+    triage: 158,
+    winnability: "Medium",
+  },
+];
+
+export const dataPolicies: PolicyItem[] = [
+  {
+    id: 1,
+    line: {
+      icon: "ship",
+      name: "Marine Cargo",
+      lineNumber: "17030212",
+    },
+    effDate: "6/30/2026",
+    expDate: "6/30/2027",
+    status: "Active",
+    expTech: 587500,
+    expPremium: 605000,
+    renewalToTech: 610000,
+    renewalTech: 620000,
+    renewalPremium: 625000,
+    rateChange: "3.3%",
+    lossRatio: 22,
+  },
+  {
+    id: 2,
+    line: {
+      icon: "shield",
+      name: "General Liability",
+      lineNumber: "4631092",
+    },
+    effDate: "6/30/2026",
+    expDate: "6/30/2027",
+    status: "Active",
+    expTech: 160000,
+    expPremium: 165000,
+    renewalToTech: 170000,
+    renewalTech: 172000,
+    renewalPremium: 175000,
+    rateChange: "6,1%",
+    lossRatio: 55,
+  },
+  {
+    id: 3,
+    line: {
+      icon: "users",
+      name: "Workers Comp",
+      lineNumber: "9182371",
+    },
+    effDate: "Pending",
+    expDate: "Pending",
+    status: "Pending",
+    expTech: 0,
+    expPremium: 0,
+    renewalToTech: 73000,
+    renewalTech: 75000,
+    renewalPremium: 75000,
+    rateChange: "N/A",
+    lossRatio: undefined,
+  },
+  {
+    id: 4,
+    line: {
+      icon: "umbrella",
+      name: "Umbrella",
+      lineNumber: "5274936",
+    },
+    effDate: "13/03/2026",
+    expDate: "13/03/2027",
+    status: "Active",
+    expTech: 992500,
+    expPremium: 1020000,
+    renewalToTech: 1121000,
+    renewalTech: 1137500,
+    renewalPremium: 1150000,
+    rateChange: "10%",
+    lossRatio: 78,
+  },
+];
