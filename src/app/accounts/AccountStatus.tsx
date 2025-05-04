@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+import Layout from "@/app/components/Layout";
 import clsx from "clsx";
 import { CircleCheck } from "lucide-react";
 

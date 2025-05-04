@@ -1,8 +1,8 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
-import Layout from "@/components/Layout";
+import { Button } from "@/app/components/ui/button";
+import { Card, CardTitle } from "@/app/components/ui/card";
+import { Input } from "@/app/components/ui/input";
+import { Badge } from "@/app/components/ui/badge";
+import Layout from "@/app/components/Layout";
 
 const Communication = () => {
   return (
@@ -19,7 +19,7 @@ const Communication = () => {
         <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-2 w-full">
           <div className="flex flex-col gap-2">
             {Array.from({ length: 2 }).map((_, i) => (
-              <Card className="border border-blue-500 space-y-2">
+              <Card className="border border-blue-500 space-y-2" key={i}>
                 <div className="flex items-center gap-2">
                   <Badge variant="default" className="bg-blue-700 uppercase">
                     New

@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+import Layout from "@/app/components/Layout";
 import { Building2, ShieldCheck, Ship, Umbrella, Users } from "lucide-react";
 
 const PoliciesBlock = () => {
@@ -22,13 +22,10 @@ const PoliciesBlock = () => {
       <h2 className="title">Polities</h2>
       <Layout>
         <div className="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-1 gap-4 p-4">
-          {title.map((item, index) => (
-            <div
-              key={index}
-              className="gap-0.5 justify-between inner-container"
-            >
+          {title.map((item, i) => (
+            <div key={i} className="gap-0.5 justify-between inner-container">
               <div className="flex flex-row items-center gap-2">
-                {icons[index]}
+                {icons[i]}
                 <h4 className="text-m font-bold">{item}</h4>
               </div>
               <p className="subtitle">Premium: $625.000</p>

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Input } from "@/components/ui/input";
+import { Input } from "@/app/components/ui/input";
 import { Row } from "@tanstack/react-table";
 
 import {
@@ -19,8 +19,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { Button } from "@/components/ui/button";
+} from "@/app/components/ui/table";
+import { Button } from "@/app/components/ui/button";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];

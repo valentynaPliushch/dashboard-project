@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+import Layout from "@/app/components/Layout";
 import { DataTable } from "../accounts/data-table";
 import { dataPolicies } from "@/data/dataTables";
 import { columnsPolicies } from "@/data/columns";

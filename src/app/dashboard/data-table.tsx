@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Input } from "@/components/ui/input";
+import { Input } from "@/app/components/ui/input";
 import { Row } from "@tanstack/react-table";
 
 import {
@@ -20,8 +20,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { Button } from "@/components/ui/button";
+} from "@/app/components/ui/table";
+import { Button } from "@/app/components/ui/button";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -34,13 +34,9 @@ export function DataTable<TData, TValue>({
   data,
   type,
 }: DataTableProps<TData, TValue>) {
-  const [globalFilter, setGlobalFilter] = React.useState("");
+  const [globalFilter, setGlobalFilter] = useState("");
 
-  const globalFilterFn = (
-    row: Row<TData>,
-    columnId: string,
-    filterValue: string
-  ) => {
+  const globalFilterFn = (row: Row<TData>, _: string, filterValue: string) => {
     const filter = filterValue.toLowerCase();
 
     const searchableKeys = [

@@ -3,7 +3,7 @@
 import { columnsWorkQueue } from "@/data/columns";
 import { mockData } from "../../data/dataTables";
 import { DataTable } from "./data-table";
-import Layout from "@/components/Layout";
+import Layout from "@/app/components/Layout";
 
 const WorkQueue = () => {
   return (

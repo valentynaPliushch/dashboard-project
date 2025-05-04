@@ -4,9 +4,9 @@ import PerformanceMetrics from "./PerformanceMetrics";
 import PoliciesBlock from "./PoliciesBlock";
 import Communication from "./Communication";
 import PoliciesTable from "./PoliciesTable";
-import { Input } from "@/components/ui/input";
-import { Navigation } from "@/components/Navigation";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Input } from "@/app/components/ui/input";
+import { Navigation } from "@/app/components/Navigation";
+import { Avatar, AvatarFallback } from "@/app/components/ui/avatar";
 
 const Dashboard = () => {
   return (

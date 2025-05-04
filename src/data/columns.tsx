@@ -1,11 +1,10 @@
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
-import { WorkItem, AccountItem, PolicyItem } from "./dataTables";
+import { WorkItem, AccountItem, PolicyItem } from "./types";
 import { CircleEllipsis, Shield, Ship, Umbrella, Users } from "lucide-react";
-import { Avatar } from "@/components/ui/avatar";
+import { Avatar } from "@/app/components/ui/avatar";
 import clsx from "clsx";
-import { useDebugValue } from "react";
 
 export const columnsWorkQueue: ColumnDef<WorkItem>[] = [
   {
@@ -396,7 +395,7 @@ export const columnsPolicies: ColumnDef<PolicyItem>[] = [
     accessorKey: "lossRatio",
     header: "LOSS RATIO",
     cell: ({ row }) => {
-      let value: number | undefined = row.getValue("lossRatio");
+      const value: number | undefined = row.getValue("lossRatio");
       let color;
 
       if (value && value >= 60) {

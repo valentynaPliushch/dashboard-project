@@ -1,7 +1,7 @@
 "use client";
 
-import Layout from "@/components/Layout";
-import { Button } from "@/components/ui/button";
+import Layout from "@/app/components/Layout";
+import { Button } from "@/app/components/ui/button";
 
 const actions = [
   { id: 1, label: "New Submition" },
@@ -15,8 +15,10 @@ const QuickActions = () => {
     <Layout>
       <h3 className="title">Quick Actions</h3>
       <div className="flex flex-col gap-2 ">
-        {actions.map((action) => (
-          <Button variant="secondary">{action.label}</Button>
+        {actions.map((action, i) => (
+          <Button key={i} variant="secondary">
+            {action.label}
+          </Button>
         ))}
       </div>
     </Layout>

@@ -1,19 +1,6 @@
 "use client";
-import Layout from "@/components/Layout";
+import Layout from "@/app/components/Layout";
 import Image from "next/image";
-
-interface Goal {
-  id: number;
-  label: string;
-  current: number;
-  total: number;
-}
-
-const mockGoals: Goal[] = [
-  { id: 1, label: "Target Premium", current: 75000, total: 100000 },
-  { id: 2, label: "Client Retention", current: 82, total: 100 },
-  { id: 3, label: "Upsell Opportunities", current: 12, total: 20 },
-];
 
 const PortfolioGoals = () => {
   return (

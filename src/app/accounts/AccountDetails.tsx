@@ -1,6 +1,6 @@
-import SideMenu from "@/components/accountDetails/SideMenu";
-import MainPage from "@/components/accountDetails/MainPage";
-import Layout from "@/components/Layout";
+import SideMenu from "@/app/components/accountDetails/SideMenu";
+import MainPage from "@/app/components/accountDetails/MainPage";
+import Layout from "@/app/components/Layout";
 
 const AccountDetails = () => {
   return (

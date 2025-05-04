@@ -4,9 +4,9 @@ import WorkQueue from "@/app/dashboard/Workqueue";
 import MarketIntelligence from "@/app/dashboard/MarketIntelligence";
 import MyAccounts from "@/app/dashboard/MyAccounts";
 
-import { Input } from "@/components/ui/input";
-import { Navigation } from "@/components/Navigation";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Input } from "@/app/components/ui/input";
+import { Navigation } from "@/app/components/Navigation";
+import { Avatar, AvatarFallback } from "@/app/components/ui/avatar";
 
 const Dashboard = () => {
   return (
