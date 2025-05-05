@@ -1,6 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
 
 const SideMenu = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -25,8 +31,8 @@ const SideMenu = () => {
   ];
 
   return (
-    <div className="w-64 bg-gray-800 text-white p-4 rounded-lg border-r-2 border-gray-700 border-dashed">
-      {menuItems.map((item, index) => (
+    <div className="w-64 bg-gray-900 text-white p-4 rounded-lg border-r-2 border-gray-700 border-dashed">
+      {/* {menuItems.map((item, index) => (
         <div key={index}>
           <div
             onClick={() => toggle(index)}
@@ -44,7 +50,25 @@ const SideMenu = () => {
             </ul>
           )}
         </div>
-      ))}
+      ))} */}
+
+      <Accordion type="single" collapsible className="w-full bg-inherit">
+        {menuItems.map((item, i) => {
+          const value = `item-${i}`;
+
+          return (
+            <AccordionItem
+              value={value}
+              className="data-[state=open]:bg-midnight-600 transition-colors"
+            >
+              <AccordionTrigger>{item.title}</AccordionTrigger>
+              {item.children.map((child, i) => (
+                <AccordionContent>{child}</AccordionContent>
+              ))}
+            </AccordionItem>
+          );
+        })}
+      </Accordion>
     </div>
   );
 };

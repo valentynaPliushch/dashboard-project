@@ -85,7 +85,7 @@ export function DataTable<TData, TValue>({
               onChange={(event) => table.setGlobalFilter(event.target.value)}
               className="max-w-sm"
             />
-            <div className="flex flex-row flex-wrap">
+            <div className="flex flex-row flex-wrap gap-2">
               <Button variant="outline">Filter</Button>
               <Button variant="outline">Sort</Button>
               <Button variant="outline">Group</Button>
@@ -111,11 +111,14 @@ export function DataTable<TData, TValue>({
         )}
       </div>
 
-      <div className="rounded-md border overflow-x-auto">
+      <div className="rounded-md overflow-x-auto">
         <Table className="border-none [&_th]:text-white w-full">
           <TableHeader className="border-none">
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
+              <TableRow
+                key={headerGroup.id}
+                className="bg-white/10 border-none"
+              >
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead key={header.id}>
@@ -133,11 +136,13 @@ export function DataTable<TData, TValue>({
           </TableHeader>
           <TableBody className="border-none">
             {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row) => (
+              table.getRowModel().rows.map((row, i) => (
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
-                  className="border-none"
+                  className={
+                    i % 2 === 0 ? "border-none" : "bg-white/10 border-none"
+                  }
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>

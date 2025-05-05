@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "@/app/components/Layout";
+import { ProgressBar } from "../components/ProgressBar";
 
 const PerformanceMetrics: React.FC = () => {
   return (
@@ -43,26 +44,21 @@ const PerformanceMetrics: React.FC = () => {
         <Layout>
           <p className="title-sm">Exposute Distribution</p>
           <div className="flex sm:flex-col lg:flex-row gap-3 mb-1.5">
-            <div className=" w-full h-[30px] rounded-full bg-gray-700 relative flex flex-row">
-              <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-gray-700 to-blue-500 rounded-full w-[67%] flex items-center justify-end"></div>
-            </div>
+            <ProgressBar value={71.4} display={false} />
             <div className="text-sm mt-1 flex-shrink-0 self-center">
               {" "}
               Marine Cargo: <span className="font-semibold">71.4%</span>
             </div>
           </div>
+
           <div className="flex sm:flex-col lg:flex-row gap-3 mb-1.5">
-            <div className=" w-full h-[30px] rounded-full bg-gray-700 relative flex flex-row">
-              <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-gray-700 to-blue-500 rounded-full w-[40%] flex items-center justify-end"></div>
-            </div>
+            <ProgressBar value={40} display={false} />
             <div className="text-sm mt-1 flex-shrink-0 self-center">
               General Liability: <span className="font-semibold">20%</span>
             </div>
           </div>
           <div className="flex sm:flex-col lg:flex-row gap-3 mb-1.5">
-            <div className=" w-full h-[30px] rounded-full bg-gray-700 relative flex flex-row">
-              <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-gray-700 to-blue-500 rounded-full w-[30%] flex items-center justify-end"></div>
-            </div>
+            <ProgressBar value={30} display={false} />
             <div className="text-sm mt-1 flex-shrink-0 self-center">
               {" "}
               Workers Comp: <span className="font-semibold">8.6%</span>

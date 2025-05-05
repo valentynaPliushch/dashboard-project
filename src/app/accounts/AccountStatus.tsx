@@ -4,6 +4,12 @@ import { CircleCheck } from "lucide-react";
 
 const AccountStatus = () => {
   const steps = ["Submitted", "Review", "Quote", "Bind", "Isuue", "Renew"];
+  const compilanceItems = [
+    "KYC verification",
+    "Required Documentation",
+    "Regulatory approval",
+    "Financial verification",
+  ];
 
   return (
     <div className="sm:flex lg:flex sm:flex-col lg:flex-row gap-2 items-start justify-evenly mb-6">
@@ -46,29 +52,19 @@ const AccountStatus = () => {
         <div className="flex lg:flex-row sm:flex-col gap-2">
           <h2 className="title">Compliance & Documentation</h2>
 
-          <a href="#" className="text-blue-400 text-sm mt-4 flex items-center">
+          <a href="#" className="text-blue-400 text-sm mt-4 flex self-center">
             See history <span className="ml-1">→</span>
           </a>
         </div>
 
         <Layout>
           <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-4 ">
-            <div className="flex flex-row">
-              <CircleCheck className="text-green-500" />
-              <p className="text-white ml-1">KYC verification</p>
-            </div>
-            <div className="flex flex-row">
-              <CircleCheck className="text-green-500" />
-              <p className="text-white ml-1">KYC verification</p>
-            </div>
-            <div className="flex flex-row">
-              <CircleCheck className="text-green-500" />
-              <p className="text-white ml-1">KYC verification</p>
-            </div>
-            <div className="flex flex-row">
-              <CircleCheck className="text-green-500" />
-              <p className="text-white ml-1">KYC verification</p>
-            </div>
+            {compilanceItems.map((item, i) => (
+              <div key={i} className="flex flex-row">
+                <CircleCheck className="text-green-500" />
+                <p className="text-white ml-1">{item}</p>
+              </div>
+            ))}
           </div>
         </Layout>
       </div>

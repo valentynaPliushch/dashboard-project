@@ -2,6 +2,7 @@ import { CircleArrowDown, CircleArrowUp, Rocket } from "lucide-react";
 import { LineChartComponent } from "../LineChartComponent";
 import { ColorfullProgressBar } from "../ColorfullProgressBar";
 import { Button } from "../ui/button";
+import { ProgressBar } from "../ProgressBar";
 
 const MainPage = () => {
   return (
@@ -33,27 +34,21 @@ const MainPage = () => {
           <p className="title-sm">Exposute Distribution</p>
 
           <div className="flex sm:flex-col lg:flex-row gap-3 mb-1.5">
-            <div className=" w-full h-[30px] rounded-full bg-gray-700 relative flex flex-row">
-              <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-gray-700 to-blue-500 rounded-full w-[82%] flex items-center justify-end"></div>
-            </div>
+            <ProgressBar value={82} display={false} />
             <div className="text-sm mt-1 flex-shrink-0 self-center">
               {" "}
               Your Score: <span className="font-semibold">82%</span>
             </div>
           </div>
           <div className="flex sm:flex-col lg:flex-row gap-3 mb-1.5">
-            <div className=" w-full h-[30px] rounded-full bg-gray-700 relative flex flex-row">
-              <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-gray-700 to-blue-500 rounded-full w-[68%] flex items-center justify-end"></div>
-            </div>
+            <ProgressBar value={68} display={false} />
             <div className="text-sm mt-1 flex-shrink-0 self-center">
               {" "}
               Market Avg: <span className="font-semibold">68%</span>
             </div>
           </div>
           <div className="flex sm:flex-col lg:flex-row gap-3 mb-1.5">
-            <div className=" w-full h-[30px] rounded-full bg-gray-700 relative flex flex-row">
-              <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-gray-700 to-blue-500 rounded-full w-[88%] flex items-center justify-end"></div>
-            </div>
+            <ProgressBar value={88} display={false} />
             <div className="text-sm mt-1 flex-shrink-0 self-center">
               {" "}
               Top competitor: <span className="font-semibold">88%</span>

@@ -3,7 +3,7 @@ import Layout from "@/app/components/Layout";
 const MarketIntelligence = () => {
   return (
     <Layout>
-      <h2 className="title">MarketIntelligence</h2>
+      <h2 className="title">Market Intelligence</h2>
       <ul className="list-disc pl-5">
         <li className="marker:text-red-500">
           Rate handening in Cyber Market - +15% YoY

@@ -10,7 +10,7 @@ import { Avatar, AvatarFallback } from "@/app/components/ui/avatar";
 
 const Dashboard = () => {
   return (
-    <div className="bg-gray-900 ">
+    <div className="bg-midnight-900 ">
       <div className="container flex justify-between">
         <p className="text-white text-2xl">
           Hi Artur, welcome! You have 12 open tasks.

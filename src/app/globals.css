@@ -37,6 +37,12 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+
+  --color-midnight-900: #121622;
+  --color-midnight-800: #1e2233;
+  --color-midnight-700: #252a3d;
+  --color-midnight-600: #313b54;
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -125,7 +131,7 @@
     @apply max-w-[1400px] px-3 lg:px-6 py-2 mx-auto;
   }
   .inner-container {
-    @apply flex flex-col bg-blue-300/15 rounded-2xl p-3 lg:p-5;
+    @apply flex flex-col bg-midnight-700 rounded-2xl p-3 lg:p-5;
   }
   .title {
     @apply text-2xl mb-1.5 tracking-tight text-white capitalize;

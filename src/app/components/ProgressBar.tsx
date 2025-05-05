@@ -1,26 +1,29 @@
-import clsx from "clsx";
-type Props = {
-  color: string;
-  text: string;
+import { cn } from "@/lib/utils"; // if using ShadCN setup
+
+type ProgressBarProps = {
+  className?: string;
   value: number;
+  display?: boolean;
 };
 
-export function ProgressBar({ color, text, value }: Props) {
+export const ProgressBar = ({
+  className,
+  value,
+  display,
+}: ProgressBarProps) => {
   return (
-    <div className="flex flex-col lg:flex-row w-full pb-2">
-      <div className=" w-[70%] h-full rounded-full bg-blue-300/15 relative flex flex-row">
-        <div
-          className={clsx(
-            `to-${color}`,
-            "absolute top-0 left-0 h-full bg-gradient-to-r from-gray-700 rounded-fullflex items-center justify-end"
-          )}
-          style={{ width: `${value}%` }}
-        ></div>
-      </div>
-      <div className="text-sm self-center ml-2">
-        {" "}
-        {text}: <span className="font-semibold">{value}%</span>
+    <div
+      className={cn(
+        "flex flex-row w-full h-[30px] rounded-r-full bg-midnight-600 relative",
+        className
+      )}
+    >
+      <div
+        style={{ width: `${value}%` }}
+        className="absolute top-0 left-0 flex items-center justify-end h-full bg-gradient-to-r from-transparent to-blue-500 rounded-r-full"
+      >
+        {display && `${value}%`}
       </div>
     </div>
   );
-}
+};
