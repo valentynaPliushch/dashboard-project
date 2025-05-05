@@ -7,7 +7,7 @@ type Props = {
 
 export function ProgressBar({ color, text, value }: Props) {
   return (
-    <div className="flex sm:flex-col lg:flex-row w-full pb-2">
+    <div className="flex flex-col lg:flex-row w-full pb-2">
       <div className=" w-[70%] h-full rounded-full bg-blue-300/15 relative flex flex-row">
         <div
           className={clsx(

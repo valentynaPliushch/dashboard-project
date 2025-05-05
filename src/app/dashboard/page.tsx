@@ -31,11 +31,13 @@ const Dashboard = () => {
         <hr className="bg-gray-200 border-0 w-full" />
         <div className="container flex flex-col gap-4">
           <Navigation />
-          <div className="grid lg:grid-cols-6 md:grid-cols-1 gap-2 w-full">
-            <div className="col-span-4">
+          <div className="lg:grid lg:grid-cols-6 sm:flex sm:flex-col gap-3 w-full">
+            <div className="col-span-4 mb-3">
               <WorkQueue />
             </div>
-            <PortfolioGoals />
+            <div className="mb-3">
+              <PortfolioGoals />
+            </div>
             <div className="flex flex-col gap-2 items-stretch">
               <QuickActions />
               <MarketIntelligence />

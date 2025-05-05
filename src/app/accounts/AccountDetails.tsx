@@ -7,7 +7,7 @@ const AccountDetails = () => {
     <div className="mb-4">
       <h3 className="title">Account Details</h3>
       <Layout>
-        <div className="flex flex-row">
+        <div className="flex flex-col lg:flex-row ">
           <SideMenu />
           <MainPage />
         </div>

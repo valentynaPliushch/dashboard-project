@@ -8,7 +8,7 @@ const MainPage = () => {
   return (
     <div className="w-full p-2">
       <h2 className="title-highlight font-semibold">Winnability</h2>
-      <div className="lg:grid grid-cols-6 sm:flex sm:flex-col gap-1.5">
+      <div className="flex flex-col gap-1.5 lg:grid lg:grid-cols-6">
         <div className="col-span-2 inner-container">
           <p className="title-sm">Overal score</p>
           <div className="flex flex-row gap-4 align-top">
@@ -30,11 +30,36 @@ const MainPage = () => {
           </div>
           <LineChartComponent />
         </div>
-        <div className="col-span-2 inner-container max-w-md">
+        <div className="col-span-2 inner-container w-full">
           <p className="title-sm">Exposute Distribution</p>
-          <ProgressBar color="blue-500" text="Your Score" value={82} />
-          <ProgressBar color="blue-500" text="Market Avg" value={68} />
-          <ProgressBar color="blue-500" text="Top competitor" value={88} />
+
+          <div className="flex sm:flex-col lg:flex-row gap-3 mb-1.5">
+            <div className=" w-full h-[30px] rounded-full bg-gray-700 relative flex flex-row">
+              <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-gray-700 to-blue-500 rounded-full w-[82%] flex items-center justify-end"></div>
+            </div>
+            <div className="text-sm mt-1 flex-shrink-0 self-center">
+              {" "}
+              Your Score: <span className="font-semibold">82%</span>
+            </div>
+          </div>
+          <div className="flex sm:flex-col lg:flex-row gap-3 mb-1.5">
+            <div className=" w-full h-[30px] rounded-full bg-gray-700 relative flex flex-row">
+              <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-gray-700 to-blue-500 rounded-full w-[68%] flex items-center justify-end"></div>
+            </div>
+            <div className="text-sm mt-1 flex-shrink-0 self-center">
+              {" "}
+              Market Avg: <span className="font-semibold">68%</span>
+            </div>
+          </div>
+          <div className="flex sm:flex-col lg:flex-row gap-3 mb-1.5">
+            <div className=" w-full h-[30px] rounded-full bg-gray-700 relative flex flex-row">
+              <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-gray-700 to-blue-500 rounded-full w-[88%] flex items-center justify-end"></div>
+            </div>
+            <div className="text-sm mt-1 flex-shrink-0 self-center">
+              {" "}
+              Top competitor: <span className="font-semibold">88%</span>
+            </div>
+          </div>
         </div>
         <div className="col-span-3 inner-container">
           <p className="title-sm">
@@ -111,7 +136,7 @@ const MainPage = () => {
             </span>{" "}
             AI-Powered Recomendations
           </h3>
-          <div className="flex lg:flex-row sm:flex-col justify-center">
+          <div className="flex flex-col gap-1.5 lg:flex-row justify-center mb-4">
             <div>
               <h5 className="title-sm">
                 Offer 5% premium discount in exchange for 3-year commitment
@@ -125,7 +150,7 @@ const MainPage = () => {
             </div>
             <Button variant="green">Apply</Button>
           </div>
-          <div className="flex lg:flex-row sm:flex-col justify-center">
+          <div className="flex flex-col gap-1.5 lg:flex-row justify-center">
             <div>
               <h5 className="title-sm">
                 Offer 5% premium discount in exchange for 3-year commitment

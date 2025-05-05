@@ -74,10 +74,10 @@ export function DataTable<TData, TValue>({
 
   const tabs = ["Assigned to me", "Pending Review", "Referrals"];
   return (
-    <div>
+    <div className="w-full">
       <div className="flex flex-row items-center pr-3">
         {type === "accounts" && (
-          <div className="flex lg:flex-row md:flex-col gap-2 mb-2">
+          <div className="flex flex-col gap-2 w-full lg:flex-row mb-2">
             <h2 className="title flex-1">My accounts</h2>
             <Input
               placeholder="Search..."
@@ -85,16 +85,18 @@ export function DataTable<TData, TValue>({
               onChange={(event) => table.setGlobalFilter(event.target.value)}
               className="max-w-sm"
             />
-            <Button variant="outline">Filter</Button>
-            <Button variant="outline">Sort</Button>
-            <Button variant="outline">Group</Button>
-            <Button variant="secondary">+New</Button>
+            <div className="flex flex-row flex-wrap">
+              <Button variant="outline">Filter</Button>
+              <Button variant="outline">Sort</Button>
+              <Button variant="outline">Group</Button>
+              <Button variant="secondary">+New</Button>
+            </div>
           </div>
         )}
         {type === "work-queue" && (
           <div className="flex flex-col gap-2 mb-2">
             <h2 className="title">Work Queue</h2>
-            <div className="flex flex-row">
+            <div className="flex flex-col gap-1.5 lg:flex-row overflow-x-auto">
               {tabs.map((tab, index) => (
                 <Button
                   key={index}
@@ -110,7 +112,7 @@ export function DataTable<TData, TValue>({
       </div>
 
       <div className="rounded-md border overflow-x-auto">
-        <Table className="border-none">
+        <Table className="border-none [&_th]:text-white w-full">
           <TableHeader className="border-none">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>

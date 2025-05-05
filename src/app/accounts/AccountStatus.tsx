@@ -6,8 +6,9 @@ const AccountStatus = () => {
   const steps = ["Submitted", "Review", "Quote", "Bind", "Isuue", "Renew"];
 
   return (
-    <div className="flex lg:flex-row md:flex-col gap-2 items-start justify-evenly mb-6">
-      <div className="w-full">
+    <div className="sm:flex lg:flex sm:flex-col lg:flex-row gap-2 items-start justify-evenly mb-6">
+      {/* Account Status */}
+      <div className="w-full mb-6">
         <h2 className="title">Account status</h2>
         <Layout>
           <div className="flex flex-row max-w-4xl mx-auto h-full overflow-x-auto">
@@ -40,6 +41,7 @@ const AccountStatus = () => {
           </div>
         </Layout>
       </div>
+      {/* Compliance */}
       <div className=" w-full">
         <div className="flex lg:flex-row sm:flex-col gap-2">
           <h2 className="title">Compliance & Documentation</h2>
