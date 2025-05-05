@@ -1,6 +1,5 @@
 import { CircleArrowDown, CircleArrowUp, Rocket } from "lucide-react";
 import { LineChartComponent } from "../LineChartComponent";
-import { ProgressBar } from "../ProgressBar";
 import { ColorfullProgressBar } from "../ColorfullProgressBar";
 import { Button } from "../ui/button";
 
