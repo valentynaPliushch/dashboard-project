@@ -11,10 +11,6 @@ import {
 const SideMenu = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const toggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
   const menuItems = [
     {
       title: "Dashboard",
@@ -43,6 +39,7 @@ const SideMenu = () => {
 
           return (
             <AccordionItem
+              key={i}
               value={value}
               className="data-[state=open]:bg-midnight-700 data-[state=open]:rounded-md border-none transition-colors px-2"
             >
@@ -53,7 +50,9 @@ const SideMenu = () => {
                 </span>
               </AccordionTrigger>
               {item.children.map((child, i) => (
-                <AccordionContent className="pl-6">{child}</AccordionContent>
+                <AccordionContent key={i} className="pl-6">
+                  {child}
+                </AccordionContent>
               ))}
             </AccordionItem>
           );
