@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -9,8 +8,6 @@ import {
 } from "../ui/accordion";
 
 const SideMenu = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
   const menuItems = [
     {
       title: "Dashboard",
