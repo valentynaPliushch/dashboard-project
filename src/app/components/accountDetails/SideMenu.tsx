@@ -31,39 +31,29 @@ const SideMenu = () => {
   ];
 
   return (
-    <div className="w-64 bg-gray-900 text-white p-4 rounded-lg border-r-2 border-gray-700 border-dashed">
-      {/* {menuItems.map((item, index) => (
-        <div key={index}>
-          <div
-            onClick={() => toggle(index)}
-            className="w-full flex items-center justify-between px-2 py-2 hover:bg-gray-700 rounded"
-          >
-            <span className="uppercase">{item.title}</span>
-          </div>
-          {openIndex === index && (
-            <ul className="pl-4 text-sm text-gray-300">
-              {item.children.map((child, idx) => (
-                <li key={idx} className="py-1 hover:text-white cursor-pointer">
-                  {child}
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-      ))} */}
-
-      <Accordion type="single" collapsible className="w-full bg-inherit">
+    <div className="w-[30%] border-r-2 border-gray-700 border-dashed pr-2">
+      <Accordion
+        type="single"
+        defaultValue="item-1"
+        collapsible
+        className="w-full bg-inherit "
+      >
         {menuItems.map((item, i) => {
-          const value = `item-${i}`;
+          const value = `item-${i + 1}`;
 
           return (
             <AccordionItem
               value={value}
-              className="data-[state=open]:bg-midnight-600 transition-colors"
+              className="data-[state=open]:bg-midnight-700 data-[state=open]:rounded-md border-none transition-colors px-2"
             >
-              <AccordionTrigger>{item.title}</AccordionTrigger>
+              <AccordionTrigger className="uppercase [&>svg]:hidden">
+                <span className="self-center">{item.title} </span>
+                <span className="p-2 rounded-md bg-gray-800">
+                  {item.children.length}
+                </span>
+              </AccordionTrigger>
               {item.children.map((child, i) => (
-                <AccordionContent>{child}</AccordionContent>
+                <AccordionContent className="pl-6">{child}</AccordionContent>
               ))}
             </AccordionItem>
           );
