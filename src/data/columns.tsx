@@ -6,6 +6,29 @@ import { CircleEllipsis, Shield, Ship, Umbrella, Users } from "lucide-react";
 import { Avatar } from "@/app/components/ui/avatar";
 import clsx from "clsx";
 
+function formattedValue(amount: number) {
+  let formatted;
+
+  if (amount >= 1_000_000) {
+    formatted = `$${(amount / 1_000_000).toFixed(1)}M`;
+  } else if (amount < 1_000_000 && amount >= 100_000) {
+    formatted = `$${(amount / 100_000).toFixed(1)}K`;
+  } else {
+    formatted = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    }).format(amount);
+  }
+  return formatted;
+}
+const formatUSD = (amount: number) => {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
+  }).format(amount);
+};
+
 export const columnsWorkQueue: ColumnDef<WorkItem>[] = [
   {
     accessorKey: "originator",
@@ -67,22 +90,6 @@ export const columnsWorkQueue: ColumnDef<WorkItem>[] = [
     },
   },
 ];
-
-function formattedValue(amount: number) {
-  let formatted;
-
-  if (amount >= 1_000_000) {
-    formatted = `$${(amount / 1_000_000).toFixed(1)}M`;
-  } else if (amount < 1_000_000 && amount >= 100_000) {
-    formatted = `$${(amount / 100_000).toFixed(1)}K`;
-  } else {
-    formatted = new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-    }).format(amount);
-  }
-  return formatted;
-}
 
 export const columnsMyAccounts: ColumnDef<AccountItem>[] = [
   {
@@ -329,6 +336,9 @@ export const columnsPolicies: ColumnDef<PolicyItem>[] = [
         </div>
       );
     },
+    footer: () => {
+      return `Total:`;
+    },
   },
 
   {
@@ -336,9 +346,15 @@ export const columnsPolicies: ColumnDef<PolicyItem>[] = [
     header: "expTech",
     cell: ({ row }) => {
       const amount = parseFloat(row.getValue("expTech"));
-      const formatted = formattedValue(amount);
+      const formatted = formatUSD(amount);
 
-      return <div className="text-right font-medium">{formatted}</div>;
+      return <div className="text-left font-medium">{formatted}</div>;
+    },
+    footer: ({ table }) => {
+      const total = table
+        .getFilteredRowModel()
+        .rows.reduce((sum, row) => sum + row.original.expTech, 0);
+      return formatUSD(total);
     },
   },
   {
@@ -346,9 +362,15 @@ export const columnsPolicies: ColumnDef<PolicyItem>[] = [
     header: "expPremium",
     cell: ({ row }) => {
       const amount = parseFloat(row.getValue("expPremium"));
-      const formatted = formattedValue(amount);
+      const formatted = formatUSD(amount);
 
-      return <div className="text-right font-medium">{formatted}</div>;
+      return <div className="text-left font-medium">{formatted}</div>;
+    },
+    footer: ({ table }) => {
+      const total = table
+        .getFilteredRowModel()
+        .rows.reduce((sum, row) => sum + row.original.expPremium, 0);
+      return formatUSD(total);
     },
   },
   {
@@ -356,9 +378,15 @@ export const columnsPolicies: ColumnDef<PolicyItem>[] = [
     header: "renewalToTech",
     cell: ({ row }) => {
       const amount = parseFloat(row.getValue("renewalToTech"));
-      const formatted = formattedValue(amount);
+      const formatted = formatUSD(amount);
 
-      return <div className="text-right font-medium">{formatted}</div>;
+      return <div className="text-left font-medium">{formatted}</div>;
+    },
+    footer: ({ table }) => {
+      const total = table
+        .getFilteredRowModel()
+        .rows.reduce((sum, row) => sum + row.original.renewalToTech, 0);
+      return formatUSD(total);
     },
   },
   {
@@ -366,9 +394,15 @@ export const columnsPolicies: ColumnDef<PolicyItem>[] = [
     header: "renewalTech",
     cell: ({ row }) => {
       const amount = parseFloat(row.getValue("renewalTech"));
-      const formatted = formattedValue(amount);
+      const formatted = formatUSD(amount);
 
-      return <div className="text-right font-medium">{formatted}</div>;
+      return <div className="text-left font-medium">{formatted}</div>;
+    },
+    footer: ({ table }) => {
+      const total = table
+        .getFilteredRowModel()
+        .rows.reduce((sum, row) => sum + row.original.renewalTech, 0);
+      return formatUSD(total);
     },
   },
   {
@@ -376,9 +410,14 @@ export const columnsPolicies: ColumnDef<PolicyItem>[] = [
     header: "renewalPremium",
     cell: ({ row }) => {
       const amount = parseFloat(row.getValue("renewalPremium"));
-      const formatted = formattedValue(amount);
-
-      return <div className="text-right font-medium">{formatted}</div>;
+      const formatted = formatUSD(amount);
+      return <div className="text-left font-medium">{formatted}</div>;
+    },
+    footer: ({ table }) => {
+      const total = table
+        .getFilteredRowModel()
+        .rows.reduce((sum, row) => sum + row.original.renewalPremium, 0);
+      return formatUSD(total);
     },
   },
   {

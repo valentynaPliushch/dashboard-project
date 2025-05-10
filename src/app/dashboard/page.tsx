@@ -20,8 +20,8 @@ const Dashboard = () => {
             {" "}
             <Input
               placeholder="Search..."
-              value={""}
               className="max-w-sm rounded-4xl"
+              readOnly
             />
             <Avatar>
               <AvatarFallback className="bg-blue-500">AR</AvatarFallback>

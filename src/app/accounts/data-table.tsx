@@ -19,6 +19,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
+  TableFooter,
 } from "@/app/components/ui/table";
 import { Button } from "@/app/components/ui/button";
 
@@ -63,6 +64,13 @@ export function DataTable<TData, TValue>({
     globalFilterFn,
   });
 
+  table.getFooterGroups().map((footerGroup) =>
+    footerGroup.headers.map((header) => {
+      const test = header.column.columnDef.footer;
+      console.log(header.getContext());
+    })
+  );
+
   return (
     <div>
       <div className="flex flex-row gap-2 items-center">
@@ -80,7 +88,7 @@ export function DataTable<TData, TValue>({
 
       <div className="rounded-md text-white">
         <Table className="border-none [&_th]:text-white">
-          <TableHeader className="text-white border-none">
+          <TableHeader className="text-white border-none uppercase">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
@@ -127,6 +135,21 @@ export function DataTable<TData, TValue>({
               </TableRow>
             )}
           </TableBody>
+          <TableFooter className="bg-transparent">
+            {table.getFooterGroups().map((footerGroup) => (
+              <TableRow key={footerGroup.id}>
+                {footerGroup.headers.map((header) => (
+                  <TableCell key={header.id}>
+                    {header.isPlaceholder
+                      ? null
+                      : typeof header.column.columnDef.footer === "function"
+                      ? header.column.columnDef.footer(header.getContext())
+                      : header.column.columnDef.footer}
+                  </TableCell>
+                ))}
+              </TableRow>
+            ))}
+          </TableFooter>
         </Table>
       </div>
     </div>

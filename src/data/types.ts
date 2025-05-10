@@ -35,11 +35,11 @@ export type PolicyItem = {
   effDate: string;
   expDate: string;
   status: "Active" | "Pending";
-  expTech: number | string;
-  expPremium: number | string;
-  renewalToTech: number | string;
-  renewalTech: number | string;
-  renewalPremium: number | string;
+  expTech: number;
+  expPremium: number;
+  renewalToTech: number;
+  renewalTech: number;
+  renewalPremium: number;
   rateChange: string;
   lossRatio: number | undefined;
 };
