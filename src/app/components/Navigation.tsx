@@ -26,7 +26,7 @@ const navItems = [
 export function Navigation() {
   const pathname = usePathname();
   return (
-    <div className="flex flex-row gap-2">
+    <div className="container flex flex-row gap-2">
       {navItems.map((item) => (
         <Link href={item.href} key={item.name}>
           <Button
