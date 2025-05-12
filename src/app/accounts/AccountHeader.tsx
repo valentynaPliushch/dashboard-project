@@ -1,4 +1,5 @@
 import { CircleAlert } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const AccountHeader = () => {
@@ -45,7 +46,11 @@ const AccountHeader = () => {
 
       <div className="flex flex-col gap-2 justify-between lg:flex-row pt-6">
         <div>
-          <img src="logo.svg" alt="logo" className="mr-2 w-[70px] float-left" />
+          <Image
+            src="logo.svg"
+            alt="logo"
+            className="mr-2 w-[70px] float-left"
+          />
           <h1 className="title text-3xl mr-1 tracking-wide">
             Maritime Logistics Corp
           </h1>

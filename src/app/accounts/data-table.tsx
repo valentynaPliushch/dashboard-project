@@ -64,13 +64,6 @@ export function DataTable<TData, TValue>({
     globalFilterFn,
   });
 
-  table.getFooterGroups().map((footerGroup) =>
-    footerGroup.headers.map((header) => {
-      const test = header.column.columnDef.footer;
-      console.log(header.getContext());
-    })
-  );
-
   return (
     <div>
       <div className="flex flex-row gap-2 items-center">

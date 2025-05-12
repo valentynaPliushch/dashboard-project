@@ -2,11 +2,9 @@
 
 import { Input } from "./ui/input";
 import { Avatar, AvatarFallback } from "@/app/components/ui/avatar";
-import { usePathname } from "next/navigation";
 import { Navigation } from "./Navigation";
 
 const Header = () => {
-  const pathname = usePathname();
   return (
     <div>
       <div className="container flex lg:justify-between md:justify-center">
