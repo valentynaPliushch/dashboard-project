@@ -24,7 +24,7 @@ const SideMenu = () => {
   ];
 
   return (
-    <div className="w-[30%] border-r-2 border-gray-700 border-dashed pr-2">
+    <div className="w-full lg:w-[30%] border-r-2 border-gray-700 border-dashed pr-2">
       <Accordion
         type="single"
         defaultValue="item-1"

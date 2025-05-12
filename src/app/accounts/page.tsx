@@ -7,11 +7,13 @@ import PoliciesTable from "./PoliciesTable";
 import { Input } from "@/app/components/ui/input";
 import { Navigation } from "@/app/components/Navigation";
 import { Avatar, AvatarFallback } from "@/app/components/ui/avatar";
+import AccountHeader from "./AccountHeader";
 
 const Dashboard = () => {
   return (
     <div>
       <div className="container flex flex-col gap-2">
+        <AccountHeader />
         <PerformanceMetrics />
         <PoliciesBlock />
         <AccountStatus />
