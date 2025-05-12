@@ -96,7 +96,7 @@ export function DataTable<TData, TValue>({
         {type === "work-queue" && (
           <div className="flex flex-col gap-2 mb-2">
             <h2 className="title">Work Queue</h2>
-            <div className="flex flex-col gap-1.5 lg:flex-row overflow-x-auto">
+            <div className="flex flex-row flex-wrap gap-1.5  overflow-x-auto">
               {tabs.map((tab, index) => (
                 <Button
                   key={index}
